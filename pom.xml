@@ -37,7 +37,7 @@
     <joda-time.version>2.10.10</joda-time.version>
     <activemq.version>5.16.2</activemq.version>
     <swagger-jaxrs.version>1.6.2</swagger-jaxrs.version>
-    <cxf.version>3.4.3</cxf.version>
+    <cxf.version>3.5.9</cxf.version>
     <servlet.version>3.1.0</servlet.version>
     <junit.version>4.13.2</junit.version>
     <jstl.version>1.2.5</jstl.version>
@@ -846,7 +846,7 @@
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <ignore></ignore>
+                    <ignore/>
                   </action>
                 </pluginExecution>
               </pluginExecutions>
@@ -905,14 +905,12 @@
             <phase>install</phase>
             <configuration>
               <target>
-                <echo
-                    message="making a copy for deployment: ${project.build.directory}/${project.artifactId}.${project.packaging} " />
+                <echo message="making a copy for deployment: ${project.build.directory}/${project.artifactId}.${project.packaging} "/>
                 <copy overwrite="true" verbose="true" toDir="${project.build.directory}">
                   <fileset dir="${project.build.directory}">
-                    <include name="${project.build.finalName}.${project.packaging}" />
+                    <include name="${project.build.finalName}.${project.packaging}"/>
                   </fileset>
-                  <globmapper from="${project.build.finalName}.${project.packaging}"
-                      to="${project.artifactId}.${project.packaging}" />
+                  <globmapper from="${project.build.finalName}.${project.packaging}" to="${project.artifactId}.${project.packaging}"/>
                 </copy>
               </target>
             </configuration>
